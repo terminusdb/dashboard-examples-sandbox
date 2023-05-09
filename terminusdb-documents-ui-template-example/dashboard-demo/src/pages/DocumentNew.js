@@ -23,8 +23,10 @@ export const DocumentNew = () => {
     const navigate = useNavigate()
   
     useEffect(() => {
-        getDocumentFrames()
-	},[])
+        if(tdbClient){
+            getDocumentFrames()
+        }
+	},[tdbClient])
 
     const callCreateDocument = async (jsonDocument) =>{
         const created = await createDocument(jsonDocument)
@@ -37,7 +39,7 @@ export const DocumentNew = () => {
         navigate(-1)
     }
 
-    if(!frames) return  <ProgressBar message={`Fetching frames for document type ${type} ...`}/>
+    if(!frames) return  <ProgressBar animated now={100} label={`Fetching frames for document type ${type} ...`}/>
     const errorMessage = typeof error === "object" ? JSON.stringify(error,null,4) : error
     
     return  <React.Fragment>

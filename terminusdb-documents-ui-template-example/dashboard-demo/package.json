@@ -8,8 +8,11 @@
     ],
     "main": "src/index.js",
     "dependencies": {
-        "@apollo/client": "^3.7.14",
-        "@terminusdb/terminusdb-documents-ui-template": "6.1.9-alpha.0",
+        "@apollo/client": "^3.7.10",
+        "@terminusdb/terminusdb-client": "^10.0.29",
+        "@terminusdb/terminusdb-documents-ui": "6.2.2-alpha.2",
+        "@terminusdb/terminusdb-documents-ui-template": "6.2.0-alpha.4",
+        "@terminusdb/terminusdb-react-table": "6.1.8",
         "loader-utils": "3.2.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",

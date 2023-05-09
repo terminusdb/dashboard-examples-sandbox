@@ -13,7 +13,7 @@ export const DocumentEdit = () => {
     
     const {
         updateDocument,
-        getDocument,
+        getSelectedDocument,
         selectedDocument,
         getDocumentFrames,
         frames,
@@ -26,21 +26,23 @@ export const DocumentEdit = () => {
      const  updateDocumentHandler = async (jsonDoc) =>{
         const docUp = await updateDocument(jsonDoc)
         if(docUp){
-            getDocument(documentID)
+            getSelectedDocument(documentID)
             navigate(-1)
         }
    }
     // implement the chage method
     useEffect(() => {
-        getDocumentFrames()
-        getDocument(documentID)
-	},[])
+        if(tdbClient){
+            getDocumentFrames()
+            getSelectedDocument(documentID)
+        }
+	},[tdbClient])
 
     const closeButtonClick = () =>{
         navigate(-1)
     }
   
-    if(!selectedDocument || !frames) return  <ProgressBar message={`Fetching ${documentID} ...`}/>
+    if(!selectedDocument || !frames) return  <ProgressBar animated now={100} label={`Fetching ${documentID} ...`}/>
     const errorMessage = typeof error === "object" ? JSON.stringify(error,null,4) : error
     return <React.Fragment>
          {error && <Alert variant="danger" className="m-5" onClose={() => setError(false)} dismissible>

@@ -8,8 +8,8 @@
  // DocumentView - page to view a specific document
  // DocumentEdit - page to edit a specific document
 
-import React, {useEffect} from "react"
-import './App.css';
+import React from "react"
+//import './App.css';
 import {Routes,Route,BrowserRouter} from "react-router-dom"
 import {DocumentTemplate} from "./pages/DocumentTemplate"
 import {Documents} from "./pages/Documents"
@@ -20,12 +20,13 @@ import {DocumentNew} from "./pages/DocumentNew"
 import {DocumentsGraphqlList} from "./pages/DocumentsGraphqlList"
 import {NEW_DOC, EDIT_DOC} from "./pages/constants" 
 
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header bg-secondary p-3 d-flex">
+      <header className="App-header p-3 d-flex align-items-center">
         <a class="nav-icon bg-transparent nav-link" href="/">
-          <img width ="50px" src="https://assets.terminusdb.com/images/terminusx-color.png" class="logo-img"/>
+          <img width ="70px" alt="" src="https://assets.terminusdb.com/images/terminusx-color.png" class="logo-img"/>
         </a>
         <h4 class="ms-3 mt-2">DASHBOARD DEMO</h4>
       </header>

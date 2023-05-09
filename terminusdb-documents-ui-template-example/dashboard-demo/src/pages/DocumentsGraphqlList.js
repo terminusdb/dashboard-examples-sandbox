@@ -50,7 +50,7 @@ export const DocumentsGraphqlList = () => {
         navigate(`${NEW_DOC}`)
     }
 
-    if(loading) return <ProgressBar message="Loading configuration" />
+    if(loading) return <ProgressBar animated now={100} label={`Fetching ${type} ...`}/>
     
     const querystr  = documentTablesConfig ? documentTablesConfig.objQuery[type].query : null
     const query = querystr ? gql`${querystr}` : false

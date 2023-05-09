@@ -23,7 +23,7 @@ export const Documents = () => {
         navigate(doc) 
     }
 
-    if(loading) return  <ProgressBar message={`Fetching documents ...`}/>
+    if(loading) return  <ProgressBar animated now={100} label={`Fetching documents ...`}/>
 
     const errorMessage = typeof error === "object" ? JSON.stringify(error,null,4) : error
 

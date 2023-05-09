@@ -10,7 +10,6 @@ import {ClientObj} from '../dashboard-context'
  */
 export const DocumentSearchComponent = ({setSelected, doctype}) => {
     const {apolloClient,tdbClient} = ClientObj()
-    if(!apolloClient) return <div/>
     const {documentTablesConfig,getGraphqlTablesConfig} = useTDBDocuments(tdbClient)
 
     useEffect(() => {
@@ -19,8 +18,8 @@ export const DocumentSearchComponent = ({setSelected, doctype}) => {
         }
      },[doctype]);
 
-    const querystr  = documentTablesConfig.objQuery[doctype].query
-    const gqlQuery = gql`${querystr}`
+    const querystr  = documentTablesConfig && documentTablesConfig.objQuery ? documentTablesConfig.objQuery[doctype].query : null
+    const gqlQuery = querystr ? gql`${querystr}` : null
     if(!gqlQuery) return <div/>
 
     return  <DocumentsGraphqlTable tableConfig={documentTablesConfig} 

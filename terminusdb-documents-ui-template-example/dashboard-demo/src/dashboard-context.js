@@ -1,8 +1,10 @@
+import schemaJson from './lego_schema'
 import React, {useState, useEffect, useContext} from 'react'
 import TerminusClient from '@terminusdb/terminusdb-client'
 import { ApolloClient,ApolloLink, concat, InMemoryCache, HttpLink } from '@apollo/client';
 export const ClientContext = React.createContext()
 export const ClientObj = () => useContext(ClientContext) 
+
 
 export const ClientProvider = ({children, params}) => {
 
@@ -46,11 +48,25 @@ export const ClientProvider = ({children, params}) => {
           });
       }
 
+      const createDatabase = async(dbClient) =>{
+        const currentyDB = localStorage.getItem("___SANDBOX_DATABASE_NAME___")
+        if(currentyDB){
+            dbClient.db(currentyDB)
+        }else{
+            const dbName =  `SANDBOX__${crypto.randomUUID()}`
+            const dbObj  = { label: dbName, comment: 'add db', schema: true }
+            await dbClient.createDatabase(dbName,dbObj)
+            await dbClient.addDocument(schemaJson,{graph_type:"schema",full_replace:true}); 
+            localStorage.setItem("___SANDBOX_DATABASE_NAME___",dbName)
+        }
+      }
+
      useEffect(() => {
         const initClient = async()=>{
             try{
                 const dbClient = new TerminusClient.WOQLClient(params.server,params)
-                dbClient.db(params.db)
+                await createDatabase(dbClient)
+                //dbClient.db(params.db)
                 setApolloClient(createApolloClient(dbClient))
                 setClient(dbClient)
             } catch (err) {
