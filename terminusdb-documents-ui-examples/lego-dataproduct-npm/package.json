@@ -13,7 +13,7 @@
         "react-dom": "18.2.0",
         "react-scripts": "5.0.1",
         "react-uuid": "^2.0.0",
-        "@terminusdb/tdb-react-test-npm":"^1.2.8"
+        "@terminusdb/terminusdb-documents-ui": "6.2.2-alpha.3"
     },
     "devDependencies": {
         "@babel/runtime": "7.13.8",
