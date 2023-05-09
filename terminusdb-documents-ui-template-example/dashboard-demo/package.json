@@ -11,7 +11,7 @@
         "@apollo/client": "^3.7.10",
         "@terminusdb/terminusdb-client": "^10.0.29",
         "@terminusdb/terminusdb-documents-ui": "6.2.2-alpha.3",
-        "@terminusdb/terminusdb-documents-ui-template": "6.2.0-alpha.5",
+        "@terminusdb/terminusdb-documents-ui-template": "6.2.0-alpha.6",
         "@terminusdb/terminusdb-react-table": "6.1.8",
         "loader-utils": "3.2.1",
         "graphql": "^16.6.0",
