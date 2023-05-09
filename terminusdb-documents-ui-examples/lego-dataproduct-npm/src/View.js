@@ -1,17 +1,11 @@
 import React from "react"
 import Card from "react-bootstrap/Card"
 import { FrameObj } from "./frameInit"
-import { FrameViewer } from "@terminusdb/tdb-react-test-npm" //"@terminusdb/terminusdb-react-documents-ui" //'@terminusdb/terminusdb-documents-ui'
+import { FrameViewer } from "@terminusdb/terminusdb-react-documents-ui"
 import { getFormData, handleTraverse } from "./controller"
 import Button from "react-bootstrap/Button"
 import { Stack } from "react-bootstrap"
 import { Search } from "./SearchComponent"
-
-
-//import '@terminusdb/terminusdb-documents-ui/dist/css/terminusdb__darkly.css'
-//import '@terminusdb/terminusdb-documents-ui/dist/css/terminusdb__light.css'
-//import '../../src/css/terminusdb__darkly.css'
-//import '../../src/css/terminusdb__light.css'
 
 export const View = () => { 
 
