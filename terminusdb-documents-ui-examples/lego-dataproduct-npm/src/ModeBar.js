@@ -1,3 +1,5 @@
+// ModeBar provides a widget which helps you change modes on your TerminusDB document 
+// modes supported are - create/ edit or View 
 import React, {useState} from "react"
 import Stack from 'react-bootstrap/Stack'
 import { CREATE, EDIT, VIEW, MODE_HELP_TEXT } from "./constants"
@@ -21,7 +23,7 @@ const RadioButtons = ({ mode, handleChange, checked }) => {
 }
 
 export const ModeBar = () => {
-
+	// by default in Create mode
 	const [checked, setChecked]=useState(CREATE)
 	const {
 		mode,
