@@ -1,7 +1,7 @@
 import { CREATE } from "./constants"
 import * as lego from "./lego.constants"
 
-
+// this is a function which loads the correct form Data into <FrameViewer/> on change of document type
 export function getFormData(mode, type, setData) {
   if(mode === CREATE) return {}
   let data = null

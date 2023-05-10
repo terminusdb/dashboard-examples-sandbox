@@ -23,12 +23,9 @@ To import css is light or dark mode
 |mode							| create/ edit/ view mode of form|
 |formData					| formData is the data to be filled in form during Edit or View mode |
 |onSubmit					| A function which acts as a callback with some custom logic to process data submitted via form|
-|onSelect					| A function which acts as a callback which provides a UI within the <FrameViwere/> from which user can select another document link. This can be a react component which can be used as search component|
+|onSelect					| A function which acts as a callback which provides a UI within the <FrameViewer/> from which user can select another document link. This can be a react component which can be used as search component|
 |onTraverse				| A function which acts as a callback which gets back the ID of a document on click |
 |language					| language code parameters to support a wide variety of languages in UI as defined in schema
-|showThemeSelector|  a Selector to select different themes when using Themes on an application level 
-|theme						|  a default theme in which Form will be displayed - if not mentioned ``darkly`` Bootswatch theme will be used by default 
-
 
 ## Mandatory Props
 | props 					|Mandatory  |
@@ -179,43 +176,8 @@ return <FrameViewer
 	formData={data} 							// instance data 
 	type={"Theme"}/> 							// type of document to display in form
 ```
-### Theme Selector
-FrameViewer is based on [Bootswatch](https://bootswatch.com/cosmo/) Themes. Use props ``theme`` in ``<FrameViewer/>`` component to change themes at an application level. Note that if using ``theme`` parameter in FrameViewers the css will change at an application level. If the preference is to just alter the look & feel of the FrameViwer in a project then the ``<FrameViewer/>`` component is shipped with a dark mode and a light mode. 
-
-
-```
-import { FrameViewer } from  '@terminusdb/terminusdb-documents-ui'
-return <FrameViewer
-	frame={frame} 								// frames
-	mode={"View"} 							  // mode in which to display the form
-	onTraverse={handleTraverse} 	// Callback traverse links function
-	formData={data} 							// instance data 
-	theme="darkly"								// pass a bootswatch theme - like darkly/ pulse
-	type={"Theme"}/> 							// type of document to display in form
-```
-
-```
-import { FrameViewer } from  '@terminusdb/terminusdb-documents-ui'
-return <FrameViewer
-	frame={frame} 								// frames
-	mode={"View"} 							  // mode in which to display the form
-	onTraverse={handleTraverse} 	// Callback traverse links function
-	formData={data} 							// instance data 
-	theme="minty"								// pass a bootswatch theme - like darkly/ pulse
-	type={"Theme"}/> 							// type of document to display in form
-```
-
-A Theme selector can also be enabled by passing ``showThemeSelector={true}`` 
-```
-import { FrameViewer } from  '@terminusdb/terminusdb-documents-ui'
-return <FrameViewer
-	frame={frame} 								// frames
-	mode={"View"} 							    // mode in which to display the form
-	onTraverse={handleTraverse} 				// Callback traverse links function
-	formData={data} 							// instance data 
-	showThemeSelector={true}					// use the selector to swap themes
-	type={"Theme"}/> 							// type of document to display in form
-```
+### Themes 
+FrameViewer is based on [Bootswatch](https://bootswatch.com) Themes. So you can include Bootswatch theme in your HTML file to alter the look and feel of ``<FrameViewer/>`` at an application level. If the preference is to just alter the look & feel of the FrameViwer in a project then the ``<FrameViewer/>`` component is shipped with a dark mode and a light mode. 
 
 ### CSS
 If you dont want to use themes at an application level then import CSS to make the ``<FrameViewer/>`` component appear in dark or light mode. 

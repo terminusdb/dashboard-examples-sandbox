@@ -1,3 +1,11 @@
+// This is an example of how Frames will look for this example ``Parts & Components Inventory`` data product
+// These frames are loaded into <FrameViwer/> component. For the purpose of this sandbox, we preload the JSON
+// Otherwise refer to https://terminusdb.com/docs/guides/reference-guides/javascript-client-reference/woqlclient#getschemaframe
+// on how to load Frames to a connected Data Product
+
+// This file also includes filled data to be passed as formData to <FrameViewer>
+// Controller.js has a function getFormData() which will pass the filled data based on mode & document type 
+// chosen by the user in this sandbox example
 export const LEGO_FRAMES = {
   "@context": {
     "@base": "terminusdb:///lego/data/",

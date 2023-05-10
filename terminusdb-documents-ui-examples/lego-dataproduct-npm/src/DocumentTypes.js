@@ -1,3 +1,6 @@
+// lets you choose various document types available in Parts & Components Inventory Data product 
+// This component provides you with a Nav in which you can see the <FrameViewer/> component changing 
+// when clicked on a particular type
 import React, { useState } from "react"
 import { FrameObj } from "./frameInit"
 import Nav from 'react-bootstrap/Nav';

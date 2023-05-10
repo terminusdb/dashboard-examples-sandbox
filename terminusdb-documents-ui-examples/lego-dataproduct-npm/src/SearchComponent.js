@@ -1,3 +1,5 @@
+// This is a dummy Search component which is passed to onSelect param of <FrameViewer/>
+// to allow user to easily link documents 
 import React from "react"
 import Row from "react-bootstrap/Row"
 
