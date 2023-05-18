@@ -17,7 +17,7 @@ import {DocumentView} from "./pages/DocumentView"
 import {DocumentEdit} from "./pages/DocumentEdit"
 import {DocumentNew} from "./pages/DocumentNew"
 
-import {DocumentsGraphqlList} from "./pages/DocumentsGraphqlList"
+import {ListDocuments} from "./pages/ListDocuments"
 import {NEW_DOC, EDIT_DOC} from "./pages/constants" 
 
 
@@ -35,7 +35,7 @@ function App() {
           <Route path={"/"} element={<DocumentTemplate/>}>
               <Route index element={<Documents/>} />
                 <Route path=":type">                       
-                    <Route index element={<DocumentsGraphqlList/>} /> 
+                    <Route index element={<ListDocuments/>} /> 
                     <Route path={NEW_DOC} element={<DocumentNew/>}/> 
                     <Route path=":docid" >
                         <Route index element={<DocumentView/>}/>  

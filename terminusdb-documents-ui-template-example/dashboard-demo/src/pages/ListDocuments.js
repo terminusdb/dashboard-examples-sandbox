@@ -7,7 +7,7 @@ import {ClientObj} from '../dashboard-context'
 import { Alert, ProgressBar } from "react-bootstrap";
 
 // I pass this so I'm sure it exists before loading the component
-export const DocumentsGraphqlList = () => {    
+export const ListDocuments = () => {    
     const {type} = useParams()
     const {apolloClient,tdbClient} = ClientObj()
     const {deleteDocument,
