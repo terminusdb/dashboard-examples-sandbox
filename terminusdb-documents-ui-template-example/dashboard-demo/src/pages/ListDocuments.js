@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {useParams, useNavigate} from "react-router-dom";
 import {NEW_DOC,EDIT_DOC} from "./constants"
 import {gql} from "@apollo/client";
-import { ListDocumentsComponent,useTDBDocuments } from "@terminusdb/terminusdb-documents-ui-template";
+import {ListDocumentsComponent,useTDBDocuments } from "@terminusdb/terminusdb-documents-ui-template";
 import {ClientObj} from '../dashboard-context'
 import { Alert, ProgressBar } from "react-bootstrap";
 

@@ -1,5 +1,5 @@
 import React,{useEffect} from "react"
-import {DocumentsGraphqlTable,useTDBDocuments} from "@terminusdb/terminusdb-documents-ui-template"
+import {useTDBDocuments,DocumentsGraphqlTable} from "@terminusdb/terminusdb-documents-ui-template"
 import {gql} from "@apollo/client"
 import {ClientObj} from '../dashboard-context'
 /**
