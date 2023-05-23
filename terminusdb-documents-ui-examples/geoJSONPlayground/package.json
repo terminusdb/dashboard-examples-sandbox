@@ -8,11 +8,13 @@
     ],
     "main": "src/index.js",
     "dependencies": {
+        "@terminusdb/terminusdb-documents-ui": "6.2.3-alpha.0",
         "loader-utils": "3.2.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+        "react-router-dom": "^6.11.2",
         "react-scripts": "5.0.1",
-        "@terminusdb/terminusdb-documents-ui": "6.2.3-alpha.0"
+        "react-syntax-highlighter": "^15.5.0"
     },
     "devDependencies": {
         "@babel/runtime": "7.13.8",

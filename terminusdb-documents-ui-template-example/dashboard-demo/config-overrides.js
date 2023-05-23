@@ -9,8 +9,8 @@ module.exports = {
                         type: "javascript/auto"
                 }
                 );
-                console.log("hello",path.resolve('./node_modules/@codemirror/state/dist/index.js'));
-                config.resolve.alias["@codemirror/state"] =  path.resolve('./node_modules/@codemirror/state/dist/index.cjs')
+                
+                config.resolve.alias["@codemirror/state"] =  path.resolve('./node_modules/@codemirror/state/dist/index.js')
         return config;
         }
 }
