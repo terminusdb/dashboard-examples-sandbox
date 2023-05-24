@@ -59,7 +59,7 @@ const App = (props) =>{
         setData(tmpData)
 	},[limit,start])
     
-    return <Container className='my-5'>
+    return <Container className='my-5 py-5'>
         <Alert><pre>{`Row selected id ${rowSelected}`} 
                     YOU NEED TO IMPLEMENT A LOGIC TO STORE THE ColumnsHidden status</pre></Alert>
         <Alert><pre>{`YOU NEED TO IMPLEMENT A FILTER LOGIC, 

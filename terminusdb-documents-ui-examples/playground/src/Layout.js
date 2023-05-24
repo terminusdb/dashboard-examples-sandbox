@@ -8,6 +8,7 @@ import { MANDATORY } from "./menu.constants"
 import { MoreInfo } from "./MoreInfoCanvas"
 import { Routes, Route } from "react-router-dom"
 
+
 const Layout = () => {
 	return <div fluid="xxl" className='mt-5'>
 		<MoreInfo/>
@@ -16,7 +17,7 @@ const Layout = () => {
 				<ModeBar/>
 				<Editor/>
 			</Col>
-			<Col md={8}><View/></Col>
+			<Col md={8}><View /></Col>
 		</Row>
 	</div>
 }

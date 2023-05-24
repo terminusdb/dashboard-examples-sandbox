@@ -38,7 +38,7 @@ export const View = () => {
       </Stack>
     </Card.Header>
     <Card.Body>
-      <FrameViewer frame={frames}
+     {frames && <FrameViewer frame={frames}
         mode={mode}
         formData={data}
         onTraverse={handleTraverse}
@@ -48,7 +48,7 @@ export const View = () => {
         //showThemeSelector={true}
         onSubmit={handleSubmit}
         type={type}
-      />
+      />}
     </Card.Body>
   </Card>
 }
