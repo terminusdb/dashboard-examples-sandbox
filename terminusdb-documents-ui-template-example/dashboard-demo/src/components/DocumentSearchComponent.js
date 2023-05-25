@@ -20,9 +20,13 @@ export const DocumentSearchComponent = ({setSelected, doctype}) => {
 
     const querystr  = documentTablesConfig && documentTablesConfig.objQuery ? documentTablesConfig.objQuery[doctype].query : null
     const gqlQuery = querystr ? gql`${querystr}` : null
-    if(!gqlQuery) return <div/>
+    const tableConfig =  documentTablesConfig && documentTablesConfig.tablesColumnsConfig ? documentTablesConfig.tablesColumnsConfig[type] : []
+    const advancedSearchConfig = documentTablesConfig && documentTablesConfig.advancedSearchObj ? documentTablesConfig.advancedSearchObj[type] : null
+    if(!gqlQuery || !tableConfig) return <div/>
 
-    return  <DocumentsGraphqlTable tableConfig={documentTablesConfig} 
+
+    return  <DocumentsGraphqlTable tableConfig={tableConfig} 
+                advancedSearchConfig={advancedSearchConfig}
                 type={doctype} 
                 gqlQuery={gqlQuery}
                 apolloClient={apolloClient}

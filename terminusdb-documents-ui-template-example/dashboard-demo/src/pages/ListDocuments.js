@@ -54,16 +54,20 @@ export const ListDocuments = () => {
     
     const querystr  = documentTablesConfig ? documentTablesConfig.objQuery[type].query : null
     const query = querystr ? gql`${querystr}` : false
+    const tableConfig =  documentTablesConfig && documentTablesConfig.tablesColumnsConfig ? documentTablesConfig.tablesColumnsConfig[type] : []
+    const advancedSearchConfig = documentTablesConfig && documentTablesConfig.advancedSearchObj ? documentTablesConfig.advancedSearchObj[type] : null
+ 
     const errorMessage = typeof error === "object" ? JSON.stringify(error,null,4) : error
 
     return  <React.Fragment>
              {error && <Alert variant="danger" className="m-5" onClose={() => setError(false)} dismissible>
                 Server Error: {errorMessage} </Alert>}
-            {query &&
+            {query && tableConfig &&
             <ListDocumentsComponent type={type}
                 gqlQuery={query} 
                 apolloClient={apolloClient} 
-                tablesConfig={documentTablesConfig} 
+                tableConfig={tableConfig} 
+                advancedSearchConfig={advancedSearchConfig}
                 onRowClick={onViewClick} 
                 onViewButtonClick={onViewClick}
                 onEditButtonClick={onEditClick}
