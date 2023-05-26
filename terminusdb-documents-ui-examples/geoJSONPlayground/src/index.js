@@ -3,7 +3,7 @@ import ReactDOM from "react-dom"
 import App from "./Layout"
 import { FrameProvider } from './frameInit'
 import { BrowserRouter as Router } from "react-router-dom";
-import "@terminusdb/terminusdb-documents-ui/dist/css/terminusdb__darkly.css"
+import "bootswatch/dist/darkly/bootstrap.min.css";
 
 function InitComponent () {
 
