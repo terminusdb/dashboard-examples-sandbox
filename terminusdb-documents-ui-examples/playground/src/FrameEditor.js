@@ -13,18 +13,6 @@ export const FrameEditor = () => {
 
 	if(!frames) return <div/>
 
-  const textRef = React.useRef();
-	const [code, setCode] = React.useState(
-    JSON.stringify(frames, null, 2)
-  );
-  
-	useEffect(() => {
-    if (textRef.current) {
-      const obj = new SelectionText(textRef.current);
-      //console.log("obj:", obj);
-    }
-  }, []);
-
 	const onChangeHandler = React.useCallback((value, viewUpdate) => {
 		try{
 			const parsedData = JSON.parse(value)

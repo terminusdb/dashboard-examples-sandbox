@@ -12,7 +12,10 @@
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-scripts": "5.0.1",
-        "@terminusdb/terminusdb-documents-ui": "6.2.5"
+        "@terminusdb/terminusdb-documents-ui": "6.2.5",
+        "@uiw/codemirror-theme-vscode": "^4.20.2",
+        "@uiw/react-codemirror": "^4.20.2",
+        "codemirror": "^6.0.1"
     },
     "devDependencies": {
         "@babel/runtime": "7.13.8",
