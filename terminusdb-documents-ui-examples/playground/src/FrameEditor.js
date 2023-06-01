@@ -1,28 +1,48 @@
-import React from "react" 
+import React, { useEffect } from "react";
 import { FrameObj } from "./frameInit"
-import JSONInput from 'react-json-editor-ajrm'
-import locale    from 'react-json-editor-ajrm/locale/en'
- 
+import CodeMirror from "@uiw/react-codemirror"
+import { vscodeDark } from '@uiw/codemirror-theme-vscode';
+import { json } from '@codemirror/lang-json';
+import { EditorView } from "@codemirror/view";
+
 export const FrameEditor = () => {
-	const {
+	const {	
 		frames,
-		setFrames 
+		setFrames  
 	} = FrameObj()
 
-	if(!frames) return <Loading/>
-
-	function handleInput (data) {
-		setFrames(data.jsObject)
-	}
 	if(!frames) return <div/>
-	//JSON Editor dimensions 
-	return <JSONInput
-		id='json_type_field'
-		locale={ locale }
-		placeholder={frames}
-		height= {"550px"}
-		width= {"380px"}
-		onBlur={handleInput}
+
+  const textRef = React.useRef();
+	const [code, setCode] = React.useState(
+    JSON.stringify(frames, null, 2)
+  );
+  
+	useEffect(() => {
+    if (textRef.current) {
+      const obj = new SelectionText(textRef.current);
+      //console.log("obj:", obj);
+    }
+  }, []);
+
+	const onChangeHandler = React.useCallback((value, viewUpdate) => {
+		try{
+			const parsedData = JSON.parse(value)
+			setFrames(parsedData)
+		}catch(err){
+			console.log(err.message)
+		}
+	}, []);
+
+
+	return <CodeMirror 
+		minHeight="200px" 
+		value={JSON.stringify(!frames ? {} : frames, null, 2)}
+		theme={vscodeDark}
+		extensions={[json(),EditorView.lineWrapping]}
+		className={"document__interface__main"}
+		onChange={onChangeHandler}
 	/>
 
+  
 }
