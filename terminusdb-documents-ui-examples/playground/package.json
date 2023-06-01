@@ -9,10 +9,14 @@
     "main": "src/index.js",
     "dependencies": {
         "@terminusdb/terminusdb-documents-ui": "6.2.5",
+        "@uiw/codemirror-theme-vscode": "^4.20.2",
+        "@uiw/react-codemirror": "^4.20.2",
         "bootswatch": "^5.2.3",
+        "codemirror": "^6.0.1",
         "loader-utils": "3.2.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
+        "react-json-editor-ajrm": "^2.5.14",
         "react-router-dom": "^6.11.2",
         "react-scripts": "5.0.1",
         "react-syntax-highlighter": "^15.5.0"
