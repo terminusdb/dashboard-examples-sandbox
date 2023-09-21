@@ -14,7 +14,7 @@
         "@terminusdb/terminusdb-documents-ui": "6.2.5",
         "@terminusdb/terminusdb-documents-ui-template": "6.2.6",
         "@terminusdb/terminusdb-react-table": "6.2.5",
-        "graphql": "^16.6.0",
+        "graphql": "^16.8.1",
         "loader-utils": "3.2.1",
         "react": "18.2.0",
         "react-app-rewired": "^2.2.1",
